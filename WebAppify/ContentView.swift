@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
+    @State var webView: WebView = WebView()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        webView
+            .ignoresSafeArea(.all)
+            .onAppear{
+                webView.loadURL(WebData.shared.url)
+            }
+            .onChange(of: WebData.shared.url) { _, newValue in
+                webView.loadURL(newValue)
+            }
     }
 }
 
