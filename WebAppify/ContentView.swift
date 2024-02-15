@@ -8,6 +8,7 @@
 import SwiftUI
 struct ContentView: View {
     @State var webView: WebView = WebView()
+    
     var body: some View {
         webView
             .ignoresSafeArea(.all)

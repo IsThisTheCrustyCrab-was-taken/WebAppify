@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		403CD3D12B7CF40A00E511FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403CD3D02B7CF40A00E511FF /* WidgetKit.framework */; };
+		403CD3D32B7CF40A00E511FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403CD3D22B7CF40A00E511FF /* SwiftUI.framework */; };
+		403CD3D62B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3D52B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift */; };
+		403CD3D82B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3D72B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift */; };
+		403CD3DA2B7CF40A00E511FF /* OpenWebAppsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3D92B7CF40A00E511FF /* OpenWebAppsWidget.swift */; };
+		403CD3DC2B7CF40A00E511FF /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3DB2B7CF40A00E511FF /* AppIntent.swift */; };
+		403CD3DE2B7CF40B00E511FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 403CD3DD2B7CF40B00E511FF /* Assets.xcassets */; };
+		403CD3E22B7CF40B00E511FF /* OpenWebAppsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 403CD3CF2B7CF40A00E511FF /* OpenWebAppsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		409887AB2B7BBE5300848253 /* WebAppifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887AA2B7BBE5300848253 /* WebAppifyApp.swift */; };
 		409887AD2B7BBE5300848253 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887AC2B7BBE5300848253 /* ContentView.swift */; };
 		409887AF2B7BBE5600848253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409887AE2B7BBE5600848253 /* Assets.xcassets */; };
@@ -16,12 +24,19 @@
 		409887C82B7BBE5600848253 /* WebAppifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887C72B7BBE5600848253 /* WebAppifyUITestsLaunchTests.swift */; };
 		409887D52B7BBF1700848253 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887D42B7BBF1700848253 /* WebView.swift */; };
 		409887D82B7BCC5100848253 /* WebData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887D72B7BCC5100848253 /* WebData.swift */; };
-		409887E02B7C0FA500848253 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887DF2B7C0FA500848253 /* ShareViewController.swift */; };
-		409887E32B7C0FA500848253 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409887E12B7C0FA500848253 /* MainInterface.storyboard */; };
-		409887E72B7C0FA500848253 /* Add to WebAppify.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 409887DD2B7C0FA500848253 /* Add to WebAppify.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		409887F32B7C12A900848253 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887F22B7C12A900848253 /* ShareViewController.swift */; };
+		409887FA2B7C12A900848253 /* AddToWebAppify.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 409887F02B7C12A900848253 /* AddToWebAppify.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		409887FF2B7C164500848253 /* AddToWebAppifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887FE2B7C164500848253 /* AddToWebAppifyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		403CD3E02B7CF40B00E511FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4098879F2B7BBE5300848253 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 403CD3CE2B7CF40A00E511FF;
+			remoteInfo = OpenWebAppsWidgetExtension;
+		};
 		409887B82B7BBE5600848253 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4098879F2B7BBE5300848253 /* Project object */;
@@ -36,12 +51,12 @@
 			remoteGlobalIDString = 409887A62B7BBE5300848253;
 			remoteInfo = WebAppify;
 		};
-		409887E52B7C0FA500848253 /* PBXContainerItemProxy */ = {
+		409887F82B7C12A900848253 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4098879F2B7BBE5300848253 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 409887DC2B7C0FA500848253;
-			remoteInfo = "Add to WebAppify";
+			remoteGlobalIDString = 409887EF2B7C12A900848253;
+			remoteInfo = AddToWebAppify;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -52,7 +67,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				409887E72B7C0FA500848253 /* Add to WebAppify.appex in Embed Foundation Extensions */,
+				403CD3E22B7CF40B00E511FF /* OpenWebAppsWidgetExtension.appex in Embed Foundation Extensions */,
+				409887FA2B7C12A900848253 /* AddToWebAppify.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +76,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		403CD3B82B7C1EB100E511FF /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		403CD3CF2B7CF40A00E511FF /* OpenWebAppsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenWebAppsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		403CD3D02B7CF40A00E511FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		403CD3D22B7CF40A00E511FF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		403CD3D52B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebAppsWidgetBundle.swift; sourceTree = "<group>"; };
+		403CD3D72B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebAppsWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		403CD3D92B7CF40A00E511FF /* OpenWebAppsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebAppsWidget.swift; sourceTree = "<group>"; };
+		403CD3DB2B7CF40A00E511FF /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		403CD3DD2B7CF40B00E511FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		403CD3DF2B7CF40B00E511FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		403CD3FB2B7D3D8E00E511FF /* WebAppify copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WebAppify copy-Info.plist"; path = "/Users/bk/WebAppify/WebAppify copy-Info.plist"; sourceTree = "<absolute>"; };
 		409887A72B7BBE5300848253 /* WebAppify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebAppify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409887AA2B7BBE5300848253 /* WebAppifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAppifyApp.swift; sourceTree = "<group>"; };
 		409887AC2B7BBE5300848253 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,13 +100,22 @@
 		409887D42B7BBF1700848253 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		409887D62B7BBF7D00848253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		409887D72B7BCC5100848253 /* WebData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebData.swift; sourceTree = "<group>"; };
-		409887DD2B7C0FA500848253 /* Add to WebAppify.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Add to WebAppify.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		409887DF2B7C0FA500848253 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		409887E22B7C0FA500848253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		409887E42B7C0FA500848253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		409887F02B7C12A900848253 /* AddToWebAppify.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AddToWebAppify.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		409887F22B7C12A900848253 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		409887F72B7C12A900848253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		409887FE2B7C164500848253 /* AddToWebAppifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWebAppifyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		403CD3CC2B7CF40A00E511FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				403CD3D32B7CF40A00E511FF /* SwiftUI.framework in Frameworks */,
+				403CD3D12B7CF40A00E511FF /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		409887A42B7BBE5300848253 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,7 +137,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		409887DA2B7C0FA500848253 /* Frameworks */ = {
+		409887ED2B7C12A900848253 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -111,14 +147,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		403CD3B72B7C1EB100E511FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				403CD3B82B7C1EB100E511FF /* UniformTypeIdentifiers.framework */,
+				403CD3D02B7CF40A00E511FF /* WidgetKit.framework */,
+				403CD3D22B7CF40A00E511FF /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		403CD3D42B7CF40A00E511FF /* OpenWebAppsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				403CD3D52B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift */,
+				403CD3D72B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift */,
+				403CD3D92B7CF40A00E511FF /* OpenWebAppsWidget.swift */,
+				403CD3DB2B7CF40A00E511FF /* AppIntent.swift */,
+				403CD3DD2B7CF40B00E511FF /* Assets.xcassets */,
+				403CD3DF2B7CF40B00E511FF /* Info.plist */,
+			);
+			path = OpenWebAppsWidget;
+			sourceTree = "<group>";
+		};
 		4098879E2B7BBE5300848253 = {
 			isa = PBXGroup;
 			children = (
 				409887A92B7BBE5300848253 /* WebAppify */,
 				409887BA2B7BBE5600848253 /* WebAppifyTests */,
 				409887C42B7BBE5600848253 /* WebAppifyUITests */,
-				409887DE2B7C0FA500848253 /* Add to WebAppify */,
+				409887F12B7C12A900848253 /* AddToWebAppify */,
+				403CD3D42B7CF40A00E511FF /* OpenWebAppsWidget */,
+				403CD3B72B7C1EB100E511FF /* Frameworks */,
 				409887A82B7BBE5300848253 /* Products */,
+				403CD3FB2B7D3D8E00E511FF /* WebAppify copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,7 +190,8 @@
 				409887A72B7BBE5300848253 /* WebAppify.app */,
 				409887B72B7BBE5600848253 /* WebAppifyTests.xctest */,
 				409887C12B7BBE5600848253 /* WebAppifyUITests.xctest */,
-				409887DD2B7C0FA500848253 /* Add to WebAppify.appex */,
+				409887F02B7C12A900848253 /* AddToWebAppify.appex */,
+				403CD3CF2B7CF40A00E511FF /* OpenWebAppsWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,19 +235,36 @@
 			path = WebAppifyUITests;
 			sourceTree = "<group>";
 		};
-		409887DE2B7C0FA500848253 /* Add to WebAppify */ = {
+		409887F12B7C12A900848253 /* AddToWebAppify */ = {
 			isa = PBXGroup;
 			children = (
-				409887DF2B7C0FA500848253 /* ShareViewController.swift */,
-				409887E12B7C0FA500848253 /* MainInterface.storyboard */,
-				409887E42B7C0FA500848253 /* Info.plist */,
+				409887F22B7C12A900848253 /* ShareViewController.swift */,
+				409887F72B7C12A900848253 /* Info.plist */,
+				409887FE2B7C164500848253 /* AddToWebAppifyView.swift */,
 			);
-			path = "Add to WebAppify";
+			path = AddToWebAppify;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		403CD3CE2B7CF40A00E511FF /* OpenWebAppsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 403CD3E32B7CF40B00E511FF /* Build configuration list for PBXNativeTarget "OpenWebAppsWidgetExtension" */;
+			buildPhases = (
+				403CD3CB2B7CF40A00E511FF /* Sources */,
+				403CD3CC2B7CF40A00E511FF /* Frameworks */,
+				403CD3CD2B7CF40A00E511FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenWebAppsWidgetExtension;
+			productName = OpenWebAppsWidgetExtension;
+			productReference = 403CD3CF2B7CF40A00E511FF /* OpenWebAppsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		409887A62B7BBE5300848253 /* WebAppify */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 409887CB2B7BBE5600848253 /* Build configuration list for PBXNativeTarget "WebAppify" */;
@@ -197,7 +277,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				409887E62B7C0FA500848253 /* PBXTargetDependency */,
+				409887F92B7C12A900848253 /* PBXTargetDependency */,
+				403CD3E12B7CF40B00E511FF /* PBXTargetDependency */,
 			);
 			name = WebAppify;
 			productName = WebAppify;
@@ -240,21 +321,21 @@
 			productReference = 409887C12B7BBE5600848253 /* WebAppifyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		409887DC2B7C0FA500848253 /* Add to WebAppify */ = {
+		409887EF2B7C12A900848253 /* AddToWebAppify */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 409887E82B7C0FA500848253 /* Build configuration list for PBXNativeTarget "Add to WebAppify" */;
+			buildConfigurationList = 409887FB2B7C12A900848253 /* Build configuration list for PBXNativeTarget "AddToWebAppify" */;
 			buildPhases = (
-				409887D92B7C0FA500848253 /* Sources */,
-				409887DA2B7C0FA500848253 /* Frameworks */,
-				409887DB2B7C0FA500848253 /* Resources */,
+				409887EC2B7C12A900848253 /* Sources */,
+				409887ED2B7C12A900848253 /* Frameworks */,
+				409887EE2B7C12A900848253 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Add to WebAppify";
-			productName = "Add to WebAppify";
-			productReference = 409887DD2B7C0FA500848253 /* Add to WebAppify.appex */;
+			name = AddToWebAppify;
+			productName = AddToWebAppify;
+			productReference = 409887F02B7C12A900848253 /* AddToWebAppify.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -267,6 +348,9 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					403CD3CE2B7CF40A00E511FF = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					409887A62B7BBE5300848253 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -278,7 +362,7 @@
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 409887A62B7BBE5300848253;
 					};
-					409887DC2B7C0FA500848253 = {
+					409887EF2B7C12A900848253 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -299,12 +383,21 @@
 				409887A62B7BBE5300848253 /* WebAppify */,
 				409887B62B7BBE5600848253 /* WebAppifyTests */,
 				409887C02B7BBE5600848253 /* WebAppifyUITests */,
-				409887DC2B7C0FA500848253 /* Add to WebAppify */,
+				409887EF2B7C12A900848253 /* AddToWebAppify */,
+				403CD3CE2B7CF40A00E511FF /* OpenWebAppsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		403CD3CD2B7CF40A00E511FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				403CD3DE2B7CF40B00E511FF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		409887A52B7BBE5300848253 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,17 +421,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		409887DB2B7C0FA500848253 /* Resources */ = {
+		409887EE2B7C12A900848253 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				409887E32B7C0FA500848253 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		403CD3CB2B7CF40A00E511FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				403CD3D62B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift in Sources */,
+				403CD3DC2B7CF40A00E511FF /* AppIntent.swift in Sources */,
+				403CD3DA2B7CF40A00E511FF /* OpenWebAppsWidget.swift in Sources */,
+				403CD3D82B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		409887A32B7BBE5300848253 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,17 +470,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		409887D92B7C0FA500848253 /* Sources */ = {
+		409887EC2B7C12A900848253 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				409887E02B7C0FA500848253 /* ShareViewController.swift in Sources */,
+				409887F32B7C12A900848253 /* ShareViewController.swift in Sources */,
+				409887FF2B7C164500848253 /* AddToWebAppifyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		403CD3E12B7CF40B00E511FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 403CD3CE2B7CF40A00E511FF /* OpenWebAppsWidgetExtension */;
+			targetProxy = 403CD3E02B7CF40B00E511FF /* PBXContainerItemProxy */;
+		};
 		409887B92B7BBE5600848253 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 409887A62B7BBE5300848253 /* WebAppify */;
@@ -388,25 +497,68 @@
 			target = 409887A62B7BBE5300848253 /* WebAppify */;
 			targetProxy = 409887C22B7BBE5600848253 /* PBXContainerItemProxy */;
 		};
-		409887E62B7C0FA500848253 /* PBXTargetDependency */ = {
+		409887F92B7C12A900848253 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 409887DC2B7C0FA500848253 /* Add to WebAppify */;
-			targetProxy = 409887E52B7C0FA500848253 /* PBXContainerItemProxy */;
+			target = 409887EF2B7C12A900848253 /* AddToWebAppify */;
+			targetProxy = 409887F82B7C12A900848253 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		409887E12B7C0FA500848253 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				409887E22B7C0FA500848253 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
+		403CD3E42B7CF40B00E511FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3NHD65RAH3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OpenWebAppsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenWebAppsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bk.WebAppify.OpenWebAppsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		403CD3E52B7CF40B00E511FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3NHD65RAH3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OpenWebAppsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenWebAppsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bk.WebAppify.OpenWebAppsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		409887C92B7BBE5600848253 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -551,6 +703,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bk.WebAppify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,6 +738,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bk.WebAppify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -664,15 +824,15 @@
 			};
 			name = Release;
 		};
-		409887E92B7C0FA500848253 /* Debug */ = {
+		409887FC2B7C12A900848253 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3NHD65RAH3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Add to WebAppify/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Add to WebAppify";
+				INFOPLIST_FILE = AddToWebAppify/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AddToWebAppify;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -680,7 +840,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bk.WebAppify.Add-to-WebAppify";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bk.WebAppify.AddToWebAppify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -689,15 +849,15 @@
 			};
 			name = Debug;
 		};
-		409887EA2B7C0FA500848253 /* Release */ = {
+		409887FD2B7C12A900848253 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3NHD65RAH3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Add to WebAppify/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Add to WebAppify";
+				INFOPLIST_FILE = AddToWebAppify/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AddToWebAppify;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -705,7 +865,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bk.WebAppify.Add-to-WebAppify";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bk.WebAppify.AddToWebAppify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -717,6 +877,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		403CD3E32B7CF40B00E511FF /* Build configuration list for PBXNativeTarget "OpenWebAppsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				403CD3E42B7CF40B00E511FF /* Debug */,
+				403CD3E52B7CF40B00E511FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		409887A22B7BBE5300848253 /* Build configuration list for PBXProject "WebAppify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -753,11 +922,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		409887E82B7C0FA500848253 /* Build configuration list for PBXNativeTarget "Add to WebAppify" */ = {
+		409887FB2B7C12A900848253 /* Build configuration list for PBXNativeTarget "AddToWebAppify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				409887E92B7C0FA500848253 /* Debug */,
-				409887EA2B7C0FA500848253 /* Release */,
+				409887FC2B7C12A900848253 /* Debug */,
+				409887FD2B7C12A900848253 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
