@@ -28,15 +28,16 @@ struct ListWebsitesView: View {
                 }
             }
             .toolbar{
-                Button(action: refreshWithDummyItems, label: {
-                    Text("Random")
-                })
-                EditButton()
-                Button(action: {
-                    showAddSheet = true
-                }, label: {
-                    Image(systemName: "plus")
-                })
+                ToolbarItem{
+                    EditButton()
+                }
+                ToolbarItem{
+                    Button(action: {
+                        showAddSheet = true
+                    }, label: {
+                        Image(systemName: "plus")
+                    })
+                }
             }
             .navigationDestination(for: WebsiteEntry.self) { element in
                 let _ = print(element)
@@ -194,11 +195,62 @@ struct AddWebsiteView: View {
 
 struct EditWebsiteView: View {
     @Binding var element: WebsiteEntry
+    @State var urlString = ""
     var body: some View {
         List{
-            HStack{
-                AsyncImage(url: element.thumbnailURL, scale: 2.0)
-                TextField(element.url.host() ?? element.url.absoluteString, text: $element.name)
+            VStack{
+                HStack{
+                    FaviconView(thumbnailURL: $element.thumbnailURL, siteName: element.name)
+                        .frame(width: 80, height: 80)
+                    VStack{
+                        TextField("Name", text: $element.name)
+                        Divider()
+                        TextField("url", text: $urlString)
+                            .keyboardType(.URL)
+                            .autocorrectionDisabled(true)
+                            .textInputAutocapitalization(.never)
+                    }
+                    .onAppear{
+                        urlString = element.url.absoluteString
+                    }
+
+                }
+            }
+        }
+        .onDisappear {
+            Task{
+                print("disappearing")
+                var url:URL?
+                var faviconURL:URL?
+                do {
+                    guard let tryUrl = URL(string: urlString) else {return}
+                    let (_,_) = try await URLSession.shared.data(from: tryUrl)
+                    url = tryUrl
+                } catch {
+                    do {
+                        guard let httpsUrl = URL(string: "https://\(urlString)") else {return}
+                        let (_,_) = try await URLSession.shared.data(from: httpsUrl)
+                        url = httpsUrl
+                    } catch {
+                        return
+                    }
+                }
+                do {
+                    let largestURL = try await FaviconFinder(url: url!)
+                        .fetchFaviconURLs()
+                        .download()
+                        .largest()
+                        .url
+                        .source
+                    faviconURL = largestURL
+                } catch {
+                    faviconURL = nil
+                    print("error fetching favicons for \(url!.absoluteString)")
+                }
+                DispatchQueue.main.async {
+                    element.url = url!
+                    element.thumbnailURL = faviconURL
+                }
             }
         }
 
