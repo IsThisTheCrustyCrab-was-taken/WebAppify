@@ -12,6 +12,5 @@ import SwiftUI
 struct OpenWebAppsWidgetBundle: WidgetBundle {
     var body: some Widget {
         OpenWebAppsWidget()
-        OpenWebAppsWidgetLiveActivity()
     }
 }

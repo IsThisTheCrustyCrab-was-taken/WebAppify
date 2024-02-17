@@ -10,7 +10,6 @@
 		403CD3D12B7CF40A00E511FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403CD3D02B7CF40A00E511FF /* WidgetKit.framework */; };
 		403CD3D32B7CF40A00E511FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403CD3D22B7CF40A00E511FF /* SwiftUI.framework */; };
 		403CD3D62B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3D52B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift */; };
-		403CD3D82B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3D72B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift */; };
 		403CD3DA2B7CF40A00E511FF /* OpenWebAppsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3D92B7CF40A00E511FF /* OpenWebAppsWidget.swift */; };
 		403CD3DC2B7CF40A00E511FF /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3DB2B7CF40A00E511FF /* AppIntent.swift */; };
 		403CD3DE2B7CF40B00E511FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 403CD3DD2B7CF40B00E511FF /* Assets.xcassets */; };
@@ -27,6 +26,11 @@
 		409887F32B7C12A900848253 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887F22B7C12A900848253 /* ShareViewController.swift */; };
 		409887FA2B7C12A900848253 /* AddToWebAppify.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 409887F02B7C12A900848253 /* AddToWebAppify.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		409887FF2B7C164500848253 /* AddToWebAppifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887FE2B7C164500848253 /* AddToWebAppifyView.swift */; };
+		40E2DCE72B7E6FEF0000D757 /* ListWebsitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCE62B7E6FEF0000D757 /* ListWebsitesView.swift */; };
+		40E2DCEA2B7E703C0000D757 /* WebsiteEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */; };
+		40E2DCEC2B7E722B0000D757 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */; };
+		40E2DCF12B7EAB5D0000D757 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCF02B7EAB5D0000D757 /* NetworkImage.swift */; };
+		40E2DCF42B7F99FA0000D757 /* FaviconFinder in Frameworks */ = {isa = PBXBuildFile; productRef = 40E2DCF32B7F99FA0000D757 /* FaviconFinder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +85,6 @@
 		403CD3D02B7CF40A00E511FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		403CD3D22B7CF40A00E511FF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		403CD3D52B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebAppsWidgetBundle.swift; sourceTree = "<group>"; };
-		403CD3D72B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebAppsWidgetLiveActivity.swift; sourceTree = "<group>"; };
 		403CD3D92B7CF40A00E511FF /* OpenWebAppsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebAppsWidget.swift; sourceTree = "<group>"; };
 		403CD3DB2B7CF40A00E511FF /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		403CD3DD2B7CF40B00E511FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +107,10 @@
 		409887F22B7C12A900848253 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		409887F72B7C12A900848253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		409887FE2B7C164500848253 /* AddToWebAppifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWebAppifyView.swift; sourceTree = "<group>"; };
+		40E2DCE62B7E6FEF0000D757 /* ListWebsitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWebsitesView.swift; sourceTree = "<group>"; };
+		40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteEntry.swift; sourceTree = "<group>"; };
+		40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		40E2DCF02B7EAB5D0000D757 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E2DCF42B7F99FA0000D757 /* FaviconFinder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				403CD3D52B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift */,
-				403CD3D72B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift */,
 				403CD3D92B7CF40A00E511FF /* OpenWebAppsWidget.swift */,
 				403CD3DB2B7CF40A00E511FF /* AppIntent.swift */,
 				403CD3DD2B7CF40B00E511FF /* Assets.xcassets */,
@@ -199,13 +206,15 @@
 		409887A92B7BBE5300848253 /* WebAppify */ = {
 			isa = PBXGroup;
 			children = (
+				40E2DCE82B7E70310000D757 /* Helpers */,
 				409887D62B7BBF7D00848253 /* Info.plist */,
 				409887D42B7BBF1700848253 /* WebView.swift */,
 				409887AA2B7BBE5300848253 /* WebAppifyApp.swift */,
 				409887AC2B7BBE5300848253 /* ContentView.swift */,
+				409887D72B7BCC5100848253 /* WebData.swift */,
+				40E2DCE62B7E6FEF0000D757 /* ListWebsitesView.swift */,
 				409887AE2B7BBE5600848253 /* Assets.xcassets */,
 				409887B02B7BBE5600848253 /* Preview Content */,
-				409887D72B7BCC5100848253 /* WebData.swift */,
 			);
 			path = WebAppify;
 			sourceTree = "<group>";
@@ -245,6 +254,16 @@
 			path = AddToWebAppify;
 			sourceTree = "<group>";
 		};
+		40E2DCE82B7E70310000D757 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */,
+				40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */,
+				40E2DCF02B7EAB5D0000D757 /* NetworkImage.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,6 +280,8 @@
 			dependencies = (
 			);
 			name = OpenWebAppsWidgetExtension;
+			packageProductDependencies = (
+			);
 			productName = OpenWebAppsWidgetExtension;
 			productReference = 403CD3CF2B7CF40A00E511FF /* OpenWebAppsWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -281,6 +302,9 @@
 				403CD3E12B7CF40B00E511FF /* PBXTargetDependency */,
 			);
 			name = WebAppify;
+			packageProductDependencies = (
+				40E2DCF32B7F99FA0000D757 /* FaviconFinder */,
+			);
 			productName = WebAppify;
 			productReference = 409887A72B7BBE5300848253 /* WebAppify.app */;
 			productType = "com.apple.product-type.application";
@@ -376,6 +400,9 @@
 				Base,
 			);
 			mainGroup = 4098879E2B7BBE5300848253;
+			packageReferences = (
+				40E2DCF22B7F99FA0000D757 /* XCRemoteSwiftPackageReference "FaviconFinder" */,
+			);
 			productRefGroup = 409887A82B7BBE5300848253 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -438,7 +465,6 @@
 				403CD3D62B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift in Sources */,
 				403CD3DC2B7CF40A00E511FF /* AppIntent.swift in Sources */,
 				403CD3DA2B7CF40A00E511FF /* OpenWebAppsWidget.swift in Sources */,
-				403CD3D82B7CF40A00E511FF /* OpenWebAppsWidgetLiveActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,8 +473,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				409887D82B7BCC5100848253 /* WebData.swift in Sources */,
+				40E2DCE72B7E6FEF0000D757 /* ListWebsitesView.swift in Sources */,
+				40E2DCF12B7EAB5D0000D757 /* NetworkImage.swift in Sources */,
 				409887D52B7BBF1700848253 /* WebView.swift in Sources */,
 				409887AD2B7BBE5300848253 /* ContentView.swift in Sources */,
+				40E2DCEC2B7E722B0000D757 /* ArrayExtension.swift in Sources */,
+				40E2DCEA2B7E703C0000D757 /* WebsiteEntry.swift in Sources */,
 				409887AB2B7BBE5300848253 /* WebAppifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,6 +962,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40E2DCF22B7F99FA0000D757 /* XCRemoteSwiftPackageReference "FaviconFinder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/will-lumley/FaviconFinder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		40E2DCF32B7F99FA0000D757 /* FaviconFinder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40E2DCF22B7F99FA0000D757 /* XCRemoteSwiftPackageReference "FaviconFinder" */;
+			productName = FaviconFinder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4098879F2B7BBE5300848253 /* Project object */;
 }

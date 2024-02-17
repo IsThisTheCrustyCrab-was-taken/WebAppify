@@ -21,7 +21,6 @@ class ShareViewController: UIViewController {
             close()
             return
         }
-        print(extensionItem.attachments)
 
         let urlDataType = UTType.url.identifier
         if itemProvider.hasItemConformingToTypeIdentifier(urlDataType) {
@@ -29,7 +28,7 @@ class ShareViewController: UIViewController {
             itemProvider.loadItem(forTypeIdentifier: urlDataType) { (providedURL, error) in
                 print("itemProvider loaded")
                 if let error {
-                    print("loading error")
+                    print("loading error \(error.localizedDescription)")
                     self.close()
                     return
                 }

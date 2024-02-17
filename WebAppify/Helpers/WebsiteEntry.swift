@@ -8,8 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct WebsiteEntry: Codable, Hashable{
+struct WebsiteEntry: Codable, Hashable, Identifiable{
+    var id = UUID()
     var url: URL
     var name: String
-    var thumbnailURL: URL
+    var thumbnailURL: URL?
 }
