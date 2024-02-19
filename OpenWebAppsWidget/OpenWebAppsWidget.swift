@@ -10,31 +10,31 @@ import SwiftUI
 import AppIntents
 import Foundation
 
-struct WebsiteEntry {
-    let url: URL = URL(string: "https://example.com")!
-    let name: String = "Example"
-    let iconURL: URL = URL(string: "https://example.com/favicon.ico")!
-}
 
+func dummyEntry() -> WebsiteEntry {
+    return WebsiteEntry(url: URL(string: "https://google.com")!, name: "example")
+}
 
 
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> WebsiteEntries {
         WebsiteEntries(
             date: Date(),
-            items: []
+            items: [
+                dummyEntry()
+            ]
         )
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> WebsiteEntries {
         WebsiteEntries(
             date: Date(),
-            items: [WebsiteEntry(),WebsiteEntry(),WebsiteEntry()]
+            items: [dummyEntry(),dummyEntry(),dummyEntry()]
         )
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WebsiteEntries> {
-        let entries: [WebsiteEntries] = []
+        let entries: [WebsiteEntries] = [WebsiteEntries(date: Date(), items: [dummyEntry(),dummyEntry(),dummyEntry()])]
         return Timeline(entries: entries, policy: .atEnd)
     }
 }
@@ -175,6 +175,7 @@ struct IconSmall : View {
             }
 
         }
+        .widgetURL(URL(string: "webappify://www.google.com")!)
     }
     init(_ item: WebsiteEntry) {
         self.item = item
@@ -250,21 +251,11 @@ struct OpenWebAppsWidget: Widget {
             OpenWebAppsWidgetEntryView(entries: entry)
                 .containerBackground(.tertiary, for: .widget)
         }
+        .supportedFamilies([.systemSmall])
     }
 }
 
 extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
 }
 
 struct DemoAppIntent: AppIntent {
@@ -282,7 +273,7 @@ struct DemoAppIntent: AppIntent {
     OpenWebAppsWidget()
 } timeline: {
     for i in 0...4{
-        let items = [WebsiteEntry](repeating: WebsiteEntry(), count: i)
+        let items = [WebsiteEntry](repeating: dummyEntry(), count: i)
         WebsiteEntries(date: .now, items: items)
     }
 }

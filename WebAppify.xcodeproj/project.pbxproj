@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		400851B82B81543200878206 /* AddWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400851B72B81543200878206 /* AddWebsiteView.swift */; };
+		400851BB2B81547F00878206 /* EditWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400851BA2B81547F00878206 /* EditWebsiteView.swift */; };
+		400851BD2B81550700878206 /* WebsitePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400851BC2B81550700878206 /* WebsitePreviewView.swift */; };
+		400851BF2B81556C00878206 /* FaviconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400851BE2B81556C00878206 /* FaviconView.swift */; };
+		400851C22B82A7EC00878206 /* WebsiteEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */; };
 		403CD3D12B7CF40A00E511FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403CD3D02B7CF40A00E511FF /* WidgetKit.framework */; };
 		403CD3D32B7CF40A00E511FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403CD3D22B7CF40A00E511FF /* SwiftUI.framework */; };
 		403CD3D62B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3D52B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift */; };
@@ -26,6 +31,7 @@
 		409887F32B7C12A900848253 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887F22B7C12A900848253 /* ShareViewController.swift */; };
 		409887FA2B7C12A900848253 /* AddToWebAppify.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 409887F02B7C12A900848253 /* AddToWebAppify.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		409887FF2B7C164500848253 /* AddToWebAppifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887FE2B7C164500848253 /* AddToWebAppifyView.swift */; };
+		40A4C3EA2B83822E00A55ABC /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */; };
 		40E2DCE72B7E6FEF0000D757 /* ListWebsitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCE62B7E6FEF0000D757 /* ListWebsitesView.swift */; };
 		40E2DCEA2B7E703C0000D757 /* WebsiteEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */; };
 		40E2DCEC2B7E722B0000D757 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */; };
@@ -80,6 +86,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		400851B72B81543200878206 /* AddWebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWebsiteView.swift; sourceTree = "<group>"; };
+		400851BA2B81547F00878206 /* EditWebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWebsiteView.swift; sourceTree = "<group>"; };
+		400851BC2B81550700878206 /* WebsitePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsitePreviewView.swift; sourceTree = "<group>"; };
+		400851BE2B81556C00878206 /* FaviconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaviconView.swift; sourceTree = "<group>"; };
+		400851C12B82A5BE00878206 /* WebAppify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebAppify.entitlements; sourceTree = "<group>"; };
 		403CD3B82B7C1EB100E511FF /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 		403CD3CF2B7CF40A00E511FF /* OpenWebAppsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenWebAppsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		403CD3D02B7CF40A00E511FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -155,6 +166,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		400851B52B81541300878206 /* WebsiteManagementViews */ = {
+			isa = PBXGroup;
+			children = (
+				40E2DCE62B7E6FEF0000D757 /* ListWebsitesView.swift */,
+				400851B72B81543200878206 /* AddWebsiteView.swift */,
+				400851BA2B81547F00878206 /* EditWebsiteView.swift */,
+				400851BC2B81550700878206 /* WebsitePreviewView.swift */,
+				400851BE2B81556C00878206 /* FaviconView.swift */,
+			);
+			path = WebsiteManagementViews;
+			sourceTree = "<group>";
+		};
 		403CD3B72B7C1EB100E511FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,12 +230,13 @@
 			isa = PBXGroup;
 			children = (
 				40E2DCE82B7E70310000D757 /* Helpers */,
+				400851C12B82A5BE00878206 /* WebAppify.entitlements */,
+				400851B52B81541300878206 /* WebsiteManagementViews */,
 				409887D62B7BBF7D00848253 /* Info.plist */,
 				409887D42B7BBF1700848253 /* WebView.swift */,
 				409887AA2B7BBE5300848253 /* WebAppifyApp.swift */,
 				409887AC2B7BBE5300848253 /* ContentView.swift */,
 				409887D72B7BCC5100848253 /* WebData.swift */,
-				40E2DCE62B7E6FEF0000D757 /* ListWebsitesView.swift */,
 				409887AE2B7BBE5600848253 /* Assets.xcassets */,
 				409887B02B7BBE5600848253 /* Preview Content */,
 			);
@@ -462,8 +486,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A4C3EA2B83822E00A55ABC /* ArrayExtension.swift in Sources */,
 				403CD3D62B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift in Sources */,
 				403CD3DC2B7CF40A00E511FF /* AppIntent.swift in Sources */,
+				400851C22B82A7EC00878206 /* WebsiteEntry.swift in Sources */,
 				403CD3DA2B7CF40A00E511FF /* OpenWebAppsWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,13 +498,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400851BB2B81547F00878206 /* EditWebsiteView.swift in Sources */,
 				409887D82B7BCC5100848253 /* WebData.swift in Sources */,
 				40E2DCE72B7E6FEF0000D757 /* ListWebsitesView.swift in Sources */,
+				400851B82B81543200878206 /* AddWebsiteView.swift in Sources */,
 				40E2DCF12B7EAB5D0000D757 /* NetworkImage.swift in Sources */,
 				409887D52B7BBF1700848253 /* WebView.swift in Sources */,
 				409887AD2B7BBE5300848253 /* ContentView.swift in Sources */,
 				40E2DCEC2B7E722B0000D757 /* ArrayExtension.swift in Sources */,
 				40E2DCEA2B7E703C0000D757 /* WebsiteEntry.swift in Sources */,
+				400851BF2B81556C00878206 /* FaviconView.swift in Sources */,
+				400851BD2B81550700878206 /* WebsitePreviewView.swift in Sources */,
 				409887AB2B7BBE5300848253 /* WebAppifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = OpenWebAppsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3NHD65RAH3;
@@ -567,6 +598,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = OpenWebAppsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3NHD65RAH3;
@@ -714,6 +746,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WebAppify/WebAppify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WebAppify/Preview Content\"";
@@ -749,6 +782,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WebAppify/WebAppify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WebAppify/Preview Content\"";
