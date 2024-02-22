@@ -12,6 +12,9 @@ import SwiftUI
 class WebData {
     static let shared = WebData()
     private var _url: URL = URL(string: "https://example.com")!
+    var error: Error?
+    var showWebView = false
+    var saveable: Bool = false
     var url: URL {
         get {
             return self._url
@@ -26,4 +29,12 @@ class WebData {
         if UIApplication.shared.canOpenURL(httpsUrl){return httpsUrl}
         return url
     }
+}
+
+
+@Observable
+class FaviconCache {
+    static let shared = FaviconCache()
+    var forURL: Dictionary<URL?, Image> = [:]
+    var forName: Dictionary<String, Image> = [:]
 }

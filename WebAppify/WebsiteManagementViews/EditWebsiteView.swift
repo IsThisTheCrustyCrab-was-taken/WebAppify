@@ -7,15 +7,39 @@
 
 import SwiftUI
 import FaviconFinder
+import WidgetKit
 
 struct EditWebsiteView: View {
+    enum SaveImageStates {
+        case notSaved
+        case saved
+        case savedAgain
+    }
+    @AppStorage("websiteEntries", store: UserDefaults(suiteName: "group.com.bk.WebAppify")) var websiteEntries: [WebsiteEntry] = []
     @Binding var element: WebsiteEntry
     @State var urlString = ""
+    @State var canSaveFaviconImage = false
+    @State var saveImageState = SaveImageStates.notSaved
+    @State var showSaveAgainConfirmationDialog = false
+    @State var showAddToShortcutsSheet = false
+    @State var saveable = false
+    @State var iconLoadedState: IconLoadedStates = .notLoaded
+    var saveImageText: String {
+        switch saveImageState {
+        case .notSaved:
+            "Save Image"
+        case .saved:
+            "Saved!"
+        case .savedAgain:
+            "Saved again!"
+        }
+    }
+
     var body: some View {
         List{
             VStack{
                 HStack{
-                    FaviconView(thumbnailURL: $element.thumbnailURL, siteName: element.name)
+                    FaviconViewProvidingImage(thumbnailURL: $element.thumbnailURL, iconLoadedState: $iconLoadedState, siteName: element.name)
                         .frame(width: 80, height: 80)
                     VStack{
                         TextField("Name", text: $element.name)
@@ -29,6 +53,40 @@ struct EditWebsiteView: View {
                         urlString = element.url.absoluteString
                     }
 
+                }
+            }
+            HStack{
+                Button(action: {
+                    Task{
+                        switch(saveImageState){
+                        case .notSaved:
+                            await saveImage()
+                            withAnimation(.spring){
+                                saveImageState = .saved
+                            }
+                        default:
+                            showSaveAgainConfirmationDialog = true
+                        }
+                    }
+                }, label: {
+                    Text(saveImageText)
+                })
+                .disabled(iconLoadedState == .notLoaded)
+                .confirmationDialog("Are you sure you want to save the icon again?", isPresented: $showSaveAgainConfirmationDialog){
+                    Button("Save Again"){
+                        Task{
+                            await saveImage()
+                            showSaveAgainConfirmationDialog = false
+                        }
+                        withAnimation(.spring){
+                            saveImageState = .savedAgain
+                        }
+                    }
+                    Button("Cancel", role: .cancel){
+                        showSaveAgainConfirmationDialog = false
+                    }
+                } message: {
+                    Text("Are you sure you want to save the icon again?")
                 }
             }
         }
@@ -62,12 +120,30 @@ struct EditWebsiteView: View {
                     print("error fetching favicons for \(url!.absoluteString)")
                 }
                 DispatchQueue.main.async {
+                    element.name = getUniqueName(name: element.name, existingNames: websiteEntries.filter({$0.id != element.id}).map({$0.name}))
                     element.url = url!
                     element.thumbnailURL = faviconURL
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
             }
         }
 
+    }
+    @MainActor
+    func saveImage() async {
+        switch iconLoadedState {
+        case .loadedURL:
+            UIImageWriteToSavedPhotosAlbum(ImageRenderer(content: FaviconCache.shared.forURL[element.thumbnailURL]).uiImage!, nil, nil, nil)
+        case .loadedName:
+            UIImageWriteToSavedPhotosAlbum(ImageRenderer(content: 
+                                                            FaviconCache.shared.forName[element.name]
+                                                                .foregroundStyle(.primary, .fill)
+                                                                .font(.system(size: 144))
+                                                                .frame(width: 180, height: 180)
+                                                        ).uiImage!, nil, nil, nil)
+        default:
+            _ = "how did we get here"
+        }
     }
 }
 #Preview {

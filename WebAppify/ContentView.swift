@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var path: NavigationPath
+    @Binding var openURL: Bool
+    @Binding var correctSiteLoaded: Bool
+    @EnvironmentObject var sceneDelegate: SceneDelegate
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ListWebsitesView(path: $path)
+            .fullScreenCover(isPresented: $openURL, content: {
+                WebsiteView(loaded: $correctSiteLoaded)
+            })
+            .onChange(of: WebData.shared.showWebView) { _, newValue in
+                if openURL == newValue {return}
+                openURL = newValue
+            }
+            .onChange(of: openURL) { _, newValue in
+                if WebData.shared.showWebView == newValue {return}
+                WebData.shared.showWebView = newValue
+            }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(path: .constant(NavigationPath()), openURL: .constant(false), correctSiteLoaded: .constant(false))
 }

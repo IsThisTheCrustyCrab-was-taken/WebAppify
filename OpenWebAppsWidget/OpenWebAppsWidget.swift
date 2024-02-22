@@ -18,40 +18,43 @@ func dummyEntry() -> WebsiteEntry {
 
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> WebsiteEntries {
-        WebsiteEntries(
+        return WebsiteEntries(
             date: Date(),
-            items: [
-                dummyEntry()
-            ]
+            items: [            ]
         )
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> WebsiteEntries {
-        WebsiteEntries(
+        let items = WebsiteQuery().entities(for: configuration.sites?.map({$0.id}) ?? [])
+        configuration.sites = items
+        return WebsiteEntries(
             date: Date(),
-            items: [dummyEntry(),dummyEntry(),dummyEntry()]
+            items: configuration.sites
         )
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WebsiteEntries> {
-        let entries: [WebsiteEntries] = [WebsiteEntries(date: Date(), items: [dummyEntry(),dummyEntry(),dummyEntry()])]
-        return Timeline(entries: entries, policy: .atEnd)
+        let items = WebsiteQuery().entities(for: configuration.sites?.map({$0.id}) ?? [])
+        configuration.sites = items
+        return Timeline(
+            entries:  [WebsiteEntries(date: Date(), items: configuration.sites)],
+            policy: .atEnd)
     }
 }
 struct WebsiteEntries: TimelineEntry {
     let date: Date
-    let items: [WebsiteEntry]
+    let items: [WebsiteEntry]?
 }
 
 struct OpenWebAppsWidgetEntryView : View {
     var entries: WebsiteEntries
     var items: [WebsiteEntry] {
-        return entries.items
+        return entries.items ?? []
     }
 
     var body: some View {
         ZStack{
-            switch entries.items.count {
+            switch items.count {
             case 1:
                 OneEntryView(items)
             case 2:
@@ -61,9 +64,15 @@ struct OpenWebAppsWidgetEntryView : View {
             case 4:
                 FourEntriesView(items)
             default:
-                Text("Pick Websites to display here")
+                VStack{
+                    Text("Pick Websites").fontWeight(.bold).foregroundStyle(.primary)
+                    Divider()
+                    Text("Just tap and hold, then select Edit Widget and add the sites you'd like").font(.footnote)
+
+                }.padding(-10)
             }
         }
+        .unredacted()
     }
 }
 
@@ -152,30 +161,42 @@ struct NetworkImage: View {
 struct IconSmall : View {
     let item: WebsiteEntry
     var body: some View {
-        ZStack{
-            NetworkImage(url: URL(string: "https://www.google.com/favicon.ico"))
-                .padding(5)
-                .background{
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.regularMaterial)
-                }
-                .scaledToFit()
-                .padding(-2)
-            if item.name != ""
-            {
-                Text(item.name).font(.caption)
-                    .lineLimit(4)
-                    .minimumScaleFactor(0.8)
-                    .padding(4)
-                    .background{
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(.thinMaterial)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            }
 
-        }
-        .widgetURL(URL(string: "webappify://www.google.com")!)
+        Link(destination: item.url, label: {
+            ZStack{
+                if let thumbnailURL = item.thumbnailURL{
+                    NetworkImage(url: thumbnailURL)
+                        .padding(5)
+                        .background{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.regularMaterial)
+                        }
+
+                } else {
+                    let letter = item.name.first?.lowercased() ?? "questionmark"
+                    Image(systemName: "\(letter).square.fill")
+                        .resizable()
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(.primary, .fill)
+                        .font(.system(size: 144))
+                        .clipShape(.rect(cornerRadius: 10))
+                }
+
+                if item.name != ""
+                {
+                    Text(item.name).font(.caption)
+                        .lineLimit(4)
+                        .minimumScaleFactor(0.8)
+                        .padding(4)
+                        .background{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.ultraThinMaterial)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                }
+            }
+        })
+        .padding(-2)
     }
     init(_ item: WebsiteEntry) {
         self.item = item
@@ -184,27 +205,38 @@ struct IconSmall : View {
 struct IconMedium : View {
     let item: WebsiteEntry
     var body: some View {
-        HStack{
-            Image(systemName: "globe")
-                .resizable()
-                .padding(5)
-                .background{
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.regularMaterial)
-                }
-                .scaledToFit()
-                .padding(-2)
-            Text(item.name)
-                .lineLimit(4)
-                .minimumScaleFactor(0.6)
-                .padding(4)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        Link(destination: item.url, label: {
+            HStack{
+                if let thumbnailURL = item.thumbnailURL{
+                    NetworkImage(url: thumbnailURL)
+                        .padding(5)
+                        .background{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.regularMaterial)
+                        }
 
-        }.background{
-            RoundedRectangle(cornerRadius: 10)
-                .fill(.ultraThinMaterial)
-                .padding(-2)
-        }
+                } else {
+                    let letter = item.name.first?.lowercased() ?? "questionmark"
+                    Image(systemName: "\(letter).square.fill")
+                        .resizable()
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(.primary, .fill)
+                        .font(.system(size: 144))
+                        .clipShape(.rect(cornerRadius: 10))
+                }
+                Text(item.name)
+                    .lineLimit(4)
+                    .minimumScaleFactor(0.6)
+                    .padding(4)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+
+            }.background{
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(.gray.opacity(0.1))
+            }
+        })
+        .padding(-2)
+
     }
     init(_ item: WebsiteEntry) {
         self.item = item
@@ -213,30 +245,42 @@ struct IconMedium : View {
 struct IconLarge : View {
     let item: WebsiteEntry
     var body: some View {
-        ZStack{
-            Image(systemName: "globe")
-                .resizable()
-                .padding(10)
-                .background{
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.regularMaterial)
+        Link(destination: item.url, label: {
+            ZStack{
+                if let thumbnailURL = item.thumbnailURL{
+                    NetworkImage(url: thumbnailURL)
+                        .padding(5)
+                        .background{
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(.regularMaterial)
+                        }
+                        .padding(-10)
+                } else {
+                    let letter = item.name.first?.lowercased() ?? "questionmark"
+                    Image(systemName: "\(letter).square.fill")
+                        .resizable()
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(.primary, .fill)
+                        .font(.system(size: 144))
+                        .clipShape(.rect(cornerRadius: 15))
+                        .padding(-10)
                 }
-                .scaledToFit()
-                .padding(-2)
-            if item.name != ""
-            {
-                Text(item.name)
-                    .lineLimit(4)
-                    .minimumScaleFactor(0.8)
-                    .padding(4)
-                    .background{
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(.thinMaterial)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            }
+                if item.name != ""
+                {
+                    Text(item.name)
+                        .lineLimit(4)
+                        .minimumScaleFactor(0.8)
+                        .padding(4)
+                        .background{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.thinMaterial)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                }
 
-        }
+            }
+        })
+
     }
     init(_ item: WebsiteEntry) {
         self.item = item
@@ -249,7 +293,7 @@ struct OpenWebAppsWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             OpenWebAppsWidgetEntryView(entries: entry)
-                .containerBackground(.tertiary, for: .widget)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
         .supportedFamilies([.systemSmall])
     }
@@ -258,14 +302,7 @@ struct OpenWebAppsWidget: Widget {
 extension ConfigurationAppIntent {
 }
 
-struct DemoAppIntent: AppIntent {
-    static var title: LocalizedStringResource = "title"
-    static var description = IntentDescription("description")
-    func perform() async throws -> some IntentResult {
-        let _ = print("intent")
-        return .result()
-    }
-}
+
 
 
 

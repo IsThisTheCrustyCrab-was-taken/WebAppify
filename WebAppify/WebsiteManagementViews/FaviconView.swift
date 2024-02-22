@@ -15,10 +15,12 @@ struct FaviconView: View {
             AsyncImage(url: thumbnailURL) { image in
                 image
                     .resizable()
-                    .padding(5)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
                     .background{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.regularMaterial)
+                    }
+                    .onAppear {
                     }
             } placeholder: {
                 ProgressView()
@@ -35,7 +37,8 @@ struct FaviconView: View {
     }
 }
 
+
 #Preview {
-    FaviconView(thumbnailURL: Binding.constant(nil), siteName: "Example")
+    FaviconView(thumbnailURL: .constant(nil), siteName: "Example")
         .frame(width: 160, height: 160)
 }

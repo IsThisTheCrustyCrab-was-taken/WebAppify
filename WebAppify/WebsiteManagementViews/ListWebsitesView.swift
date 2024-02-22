@@ -8,12 +8,14 @@
 import SwiftUI
 import FaviconFinder
 import SwiftSoup
+import WidgetKit
 
 struct ListWebsitesView: View {
     @AppStorage("websiteEntries", store: UserDefaults(suiteName: "group.com.bk.WebAppify")) var websiteEntries: [WebsiteEntry] = []
     @State private var showAddSheet = false
+    @Binding var path: NavigationPath
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path){
             List {
                 ForEach(websiteEntries) {entry in
                     NavigationLink(value: entry) {
@@ -25,6 +27,7 @@ struct ListWebsitesView: View {
                 }
                 .onDelete{ indexSet in
                     websiteEntries.remove(atOffsets: indexSet)
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
             }
             .toolbar{
@@ -40,12 +43,13 @@ struct ListWebsitesView: View {
                 }
             }
             .navigationDestination(for: WebsiteEntry.self) { element in
-                let _ = print(element)
-                EditWebsiteView(
-                    element: $websiteEntries.first(where: { el in
-                        el.id == element.id
-                    })!
-                )
+                let el = $websiteEntries.first(where: { el in
+                    el.id == element.id
+                })!
+                EditWebsiteView(element: el)
+            }
+            .navigationDestination(for: String.self) { urlString in
+                AddWebsiteFullscreenView(urlString: urlString, path: $path)
             }
             .navigationTitle("Saved Sites")
         }
@@ -60,5 +64,5 @@ struct ListWebsitesView: View {
 }
 
 #Preview {
-    ListWebsitesView()
+    ListWebsitesView(path: Binding.constant(NavigationPath()))
 }

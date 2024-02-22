@@ -7,27 +7,17 @@
 
 import WidgetKit
 import AppIntents
+import SwiftUI
 
 
 
 
 
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
-
-    private struct EntryOptionsProvider: DynamicOptionsProvider {
-        func results() async throws -> [String] {
-            print("count: \(entries.count)")
-            return entries.map { $0.name }
-        }
-    }
-
     static var title: LocalizedStringResource = "Open in WebAppify"
     static var description = IntentDescription("Pick websites to open them in WebAppify.")
-    @Parameter(title: "First site", optionsProvider: EntryOptionsProvider()) var first: String
-    @Parameter(title: "Second site", optionsProvider: EntryOptionsProvider()) var second: String
-    @Parameter(title: "Third site", optionsProvider: EntryOptionsProvider()) var third: String
-    
-
+    @Parameter(title: "Website shortcuts", size: 4)
+    var sites: [WebsiteEntry]?
 }
 
 //struct FirstQuery: EntityStringQuery {

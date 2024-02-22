@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FaviconFinder
+import WidgetKit
 
 struct AddWebsiteView: View {
     @AppStorage("websiteEntries", store: UserDefaults(suiteName: "group.com.bk.WebAppify")) var websiteEntries: [WebsiteEntry] = []
@@ -88,7 +89,7 @@ struct AddWebsiteView: View {
     func fetchIconAndAllowSaveAsync(url: URL) async {
         do {
             let (_, _) = try await URLSession.shared.data(from: url)
-            siteName = extractDomainName(from: url)
+            siteName = extractDomainName(from: url, urlString: urlString)
             withAnimation(.default){
                 actualURL = url
                 validItem = true
@@ -111,7 +112,9 @@ struct AddWebsiteView: View {
         }
     }
     func saveAndDismiss() {
+        siteName = getUniqueName(name: siteName, existingNames: websiteEntries.map{$0.name})
         websiteEntries.insert(WebsiteEntry(url: actualURL!, name: siteName, thumbnailURL: faviconURL), at: 0)
+        UserDefaults(suiteName: "group.com.bk.WebAppify")?.set(websiteEntries.rawValue, forKey: "websiteEntries")
         showSheet = false
     }
     func invalidateItem(){
@@ -120,13 +123,6 @@ struct AddWebsiteView: View {
             faviconURL = nil
             validItem = false
         }
-    }
-    func extractDomainName(from url: URL) -> String {
-        guard let host = url.host else {
-            return urlString
-        }
-        let name = host.components(separatedBy: ".").first?.capitalized
-        return name ?? host
     }
 }
 

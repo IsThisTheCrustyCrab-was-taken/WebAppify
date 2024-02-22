@@ -19,8 +19,9 @@
 		403CD3DC2B7CF40A00E511FF /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403CD3DB2B7CF40A00E511FF /* AppIntent.swift */; };
 		403CD3DE2B7CF40B00E511FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 403CD3DD2B7CF40B00E511FF /* Assets.xcassets */; };
 		403CD3E22B7CF40B00E511FF /* OpenWebAppsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 403CD3CF2B7CF40A00E511FF /* OpenWebAppsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		40653E9B2B869D3700F19E27 /* FaviconViewProvidingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40653E9A2B869D3700F19E27 /* FaviconViewProvidingImage.swift */; };
 		409887AB2B7BBE5300848253 /* WebAppifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887AA2B7BBE5300848253 /* WebAppifyApp.swift */; };
-		409887AD2B7BBE5300848253 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887AC2B7BBE5300848253 /* ContentView.swift */; };
+		409887AD2B7BBE5300848253 /* WebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887AC2B7BBE5300848253 /* WebsiteView.swift */; };
 		409887AF2B7BBE5600848253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409887AE2B7BBE5600848253 /* Assets.xcassets */; };
 		409887B22B7BBE5600848253 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409887B12B7BBE5600848253 /* Preview Assets.xcassets */; };
 		409887BC2B7BBE5600848253 /* WebAppifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887BB2B7BBE5600848253 /* WebAppifyTests.swift */; };
@@ -32,6 +33,11 @@
 		409887FA2B7C12A900848253 /* AddToWebAppify.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 409887F02B7C12A900848253 /* AddToWebAppify.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		409887FF2B7C164500848253 /* AddToWebAppifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887FE2B7C164500848253 /* AddToWebAppifyView.swift */; };
 		40A4C3EA2B83822E00A55ABC /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */; };
+		40DF06E92B840CC4008DC7A8 /* FaviconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400851BE2B81556C00878206 /* FaviconView.swift */; };
+		40DF06EC2B84FBD5008DC7A8 /* AddWebsiteFullscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF06EB2B84FBD5008DC7A8 /* AddWebsiteFullscreenView.swift */; };
+		40DF06F02B8545D3008DC7A8 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF06EF2B8545D3008DC7A8 /* HelperFunctions.swift */; };
+		40DF06F42B863D73008DC7A8 /* QuickActionLaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF06F32B863D73008DC7A8 /* QuickActionLaunchListView.swift */; };
+		40DF06F62B864EC2008DC7A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF06F52B864EC2008DC7A8 /* ContentView.swift */; };
 		40E2DCE72B7E6FEF0000D757 /* ListWebsitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCE62B7E6FEF0000D757 /* ListWebsitesView.swift */; };
 		40E2DCEA2B7E703C0000D757 /* WebsiteEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */; };
 		40E2DCEC2B7E722B0000D757 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */; };
@@ -101,9 +107,10 @@
 		403CD3DD2B7CF40B00E511FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		403CD3DF2B7CF40B00E511FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		403CD3FB2B7D3D8E00E511FF /* WebAppify copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WebAppify copy-Info.plist"; path = "/Users/bk/WebAppify/WebAppify copy-Info.plist"; sourceTree = "<absolute>"; };
+		40653E9A2B869D3700F19E27 /* FaviconViewProvidingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaviconViewProvidingImage.swift; sourceTree = "<group>"; };
 		409887A72B7BBE5300848253 /* WebAppify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebAppify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409887AA2B7BBE5300848253 /* WebAppifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAppifyApp.swift; sourceTree = "<group>"; };
-		409887AC2B7BBE5300848253 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		409887AC2B7BBE5300848253 /* WebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteView.swift; sourceTree = "<group>"; };
 		409887AE2B7BBE5600848253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		409887B12B7BBE5600848253 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		409887B72B7BBE5600848253 /* WebAppifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebAppifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +125,10 @@
 		409887F22B7C12A900848253 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		409887F72B7C12A900848253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		409887FE2B7C164500848253 /* AddToWebAppifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWebAppifyView.swift; sourceTree = "<group>"; };
+		40DF06EB2B84FBD5008DC7A8 /* AddWebsiteFullscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWebsiteFullscreenView.swift; sourceTree = "<group>"; };
+		40DF06EF2B8545D3008DC7A8 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		40DF06F32B863D73008DC7A8 /* QuickActionLaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionLaunchListView.swift; sourceTree = "<group>"; };
+		40DF06F52B864EC2008DC7A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		40E2DCE62B7E6FEF0000D757 /* ListWebsitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWebsitesView.swift; sourceTree = "<group>"; };
 		40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteEntry.swift; sourceTree = "<group>"; };
 		40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -174,6 +185,7 @@
 				400851BA2B81547F00878206 /* EditWebsiteView.swift */,
 				400851BC2B81550700878206 /* WebsitePreviewView.swift */,
 				400851BE2B81556C00878206 /* FaviconView.swift */,
+				40DF06EB2B84FBD5008DC7A8 /* AddWebsiteFullscreenView.swift */,
 			);
 			path = WebsiteManagementViews;
 			sourceTree = "<group>";
@@ -229,16 +241,16 @@
 		409887A92B7BBE5300848253 /* WebAppify */ = {
 			isa = PBXGroup;
 			children = (
-				40E2DCE82B7E70310000D757 /* Helpers */,
 				400851C12B82A5BE00878206 /* WebAppify.entitlements */,
+				40E2DCE82B7E70310000D757 /* Helpers */,
+				40DF06EA2B84F2FB008DC7A8 /* WebsiteViews */,
 				400851B52B81541300878206 /* WebsiteManagementViews */,
 				409887D62B7BBF7D00848253 /* Info.plist */,
-				409887D42B7BBF1700848253 /* WebView.swift */,
 				409887AA2B7BBE5300848253 /* WebAppifyApp.swift */,
-				409887AC2B7BBE5300848253 /* ContentView.swift */,
-				409887D72B7BCC5100848253 /* WebData.swift */,
+				40DF06F52B864EC2008DC7A8 /* ContentView.swift */,
 				409887AE2B7BBE5600848253 /* Assets.xcassets */,
 				409887B02B7BBE5600848253 /* Preview Content */,
+				40653E9A2B869D3700F19E27 /* FaviconViewProvidingImage.swift */,
 			);
 			path = WebAppify;
 			sourceTree = "<group>";
@@ -278,12 +290,24 @@
 			path = AddToWebAppify;
 			sourceTree = "<group>";
 		};
+		40DF06EA2B84F2FB008DC7A8 /* WebsiteViews */ = {
+			isa = PBXGroup;
+			children = (
+				409887D42B7BBF1700848253 /* WebView.swift */,
+				409887AC2B7BBE5300848253 /* WebsiteView.swift */,
+			);
+			path = WebsiteViews;
+			sourceTree = "<group>";
+		};
 		40E2DCE82B7E70310000D757 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				409887D72B7BCC5100848253 /* WebData.swift */,
 				40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */,
 				40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */,
 				40E2DCF02B7EAB5D0000D757 /* NetworkImage.swift */,
+				40DF06EF2B8545D3008DC7A8 /* HelperFunctions.swift */,
+				40DF06F32B863D73008DC7A8 /* QuickActionLaunchListView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -489,6 +513,7 @@
 				40A4C3EA2B83822E00A55ABC /* ArrayExtension.swift in Sources */,
 				403CD3D62B7CF40A00E511FF /* OpenWebAppsWidgetBundle.swift in Sources */,
 				403CD3DC2B7CF40A00E511FF /* AppIntent.swift in Sources */,
+				40DF06E92B840CC4008DC7A8 /* FaviconView.swift in Sources */,
 				400851C22B82A7EC00878206 /* WebsiteEntry.swift in Sources */,
 				403CD3DA2B7CF40A00E511FF /* OpenWebAppsWidget.swift in Sources */,
 			);
@@ -500,15 +525,20 @@
 			files = (
 				400851BB2B81547F00878206 /* EditWebsiteView.swift in Sources */,
 				409887D82B7BCC5100848253 /* WebData.swift in Sources */,
+				40DF06F62B864EC2008DC7A8 /* ContentView.swift in Sources */,
 				40E2DCE72B7E6FEF0000D757 /* ListWebsitesView.swift in Sources */,
 				400851B82B81543200878206 /* AddWebsiteView.swift in Sources */,
 				40E2DCF12B7EAB5D0000D757 /* NetworkImage.swift in Sources */,
+				40653E9B2B869D3700F19E27 /* FaviconViewProvidingImage.swift in Sources */,
+				40DF06F42B863D73008DC7A8 /* QuickActionLaunchListView.swift in Sources */,
 				409887D52B7BBF1700848253 /* WebView.swift in Sources */,
-				409887AD2B7BBE5300848253 /* ContentView.swift in Sources */,
+				409887AD2B7BBE5300848253 /* WebsiteView.swift in Sources */,
+				40DF06F02B8545D3008DC7A8 /* HelperFunctions.swift in Sources */,
 				40E2DCEC2B7E722B0000D757 /* ArrayExtension.swift in Sources */,
 				40E2DCEA2B7E703C0000D757 /* WebsiteEntry.swift in Sources */,
 				400851BF2B81556C00878206 /* FaviconView.swift in Sources */,
 				400851BD2B81550700878206 /* WebsitePreviewView.swift in Sources */,
+				40DF06EC2B84FBD5008DC7A8 /* AddWebsiteFullscreenView.swift in Sources */,
 				409887AB2B7BBE5300848253 /* WebAppifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,13 @@ import WebKit
 
 struct WebView: UIViewRepresentable {
     var wkWebView: WKWebView
+    
 
     func makeUIView(context: Context) -> WKWebView {
         self.wkWebView.navigationDelegate = context.coordinator
         self.wkWebView.allowsBackForwardNavigationGestures = true
+        self.wkWebView.allowsLinkPreview = true
+
         return wkWebView
     }
 
@@ -29,8 +32,8 @@ struct WebView: UIViewRepresentable {
         WebViewCoordinator(self)
     }
 
-    func loadURL(_ url:URL) {
-        wkWebView.load(URLRequest(url: url))
+    func loadURL(_ url:URL) async {
+        await wkWebView.load(URLRequest(url: url))
     }
 
     class WebViewCoordinator: NSObject, WKNavigationDelegate {
@@ -40,7 +43,11 @@ struct WebView: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+            WebData.shared.error = nil
             decisionHandler(.allow)
+        }
+        func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
+            
         }
     }
 }
