@@ -76,7 +76,7 @@ struct OptionView: View {
                         let result = try await purchaseManager.purchase(product)
                         switch result {
                         case .success(.verified(let transaction)):
-                            print("Succies")
+                            print("Success")
                         case .success(.unverified(_, let error)):
                             break
                         case .userCancelled:

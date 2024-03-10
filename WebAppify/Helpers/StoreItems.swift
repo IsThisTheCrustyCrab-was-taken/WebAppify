@@ -10,7 +10,7 @@ import StoreKit
 
 @Observable
 class StoreItems {
-    // Products
+    // Products 
     let normalTipID = "com.bk.webappify.tinytip"
     let largeTipID = "com.bk.webappify.normalTip"
     let hugeTipID = "com.bk.webappify.hugeTip"
