@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4006191C2B8E3DD400FAC600 /* PurchaseOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4006191B2B8E3DD400FAC600 /* PurchaseOptionsView.swift */; };
 		400851B82B81543200878206 /* AddWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400851B72B81543200878206 /* AddWebsiteView.swift */; };
 		400851BB2B81547F00878206 /* EditWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400851BA2B81547F00878206 /* EditWebsiteView.swift */; };
 		400851BD2B81550700878206 /* WebsitePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400851BC2B81550700878206 /* WebsitePreviewView.swift */; };
@@ -20,6 +21,8 @@
 		403CD3DE2B7CF40B00E511FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 403CD3DD2B7CF40B00E511FF /* Assets.xcassets */; };
 		403CD3E22B7CF40B00E511FF /* OpenWebAppsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 403CD3CF2B7CF40A00E511FF /* OpenWebAppsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		40653E9B2B869D3700F19E27 /* FaviconViewProvidingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40653E9A2B869D3700F19E27 /* FaviconViewProvidingImage.swift */; };
+		40653E9D2B87A18200F19E27 /* MainPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40653E9C2B87A18200F19E27 /* MainPreferencesView.swift */; };
+		40712BDF2B8FA74E00714A1B /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40712BDE2B8FA74E00714A1B /* StoreItems.swift */; };
 		409887AB2B7BBE5300848253 /* WebAppifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887AA2B7BBE5300848253 /* WebAppifyApp.swift */; };
 		409887AD2B7BBE5300848253 /* WebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409887AC2B7BBE5300848253 /* WebsiteView.swift */; };
 		409887AF2B7BBE5600848253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409887AE2B7BBE5600848253 /* Assets.xcassets */; };
@@ -92,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4006191B2B8E3DD400FAC600 /* PurchaseOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOptionsView.swift; sourceTree = "<group>"; };
 		400851B72B81543200878206 /* AddWebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWebsiteView.swift; sourceTree = "<group>"; };
 		400851BA2B81547F00878206 /* EditWebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWebsiteView.swift; sourceTree = "<group>"; };
 		400851BC2B81550700878206 /* WebsitePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsitePreviewView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 		403CD3DF2B7CF40B00E511FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		403CD3FB2B7D3D8E00E511FF /* WebAppify copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WebAppify copy-Info.plist"; path = "/Users/bk/WebAppify/WebAppify copy-Info.plist"; sourceTree = "<absolute>"; };
 		40653E9A2B869D3700F19E27 /* FaviconViewProvidingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaviconViewProvidingImage.swift; sourceTree = "<group>"; };
+		40653E9C2B87A18200F19E27 /* MainPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPreferencesView.swift; sourceTree = "<group>"; };
+		40712BDE2B8FA74E00714A1B /* StoreItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
 		409887A72B7BBE5300848253 /* WebAppify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebAppify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409887AA2B7BBE5300848253 /* WebAppifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAppifyApp.swift; sourceTree = "<group>"; };
 		409887AC2B7BBE5300848253 /* WebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		40E2DCE92B7E703C0000D757 /* WebsiteEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteEntry.swift; sourceTree = "<group>"; };
 		40E2DCEB2B7E722B0000D757 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		40E2DCF02B7EAB5D0000D757 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
+		40F3E1B62B87E7C20046C739 /* WebAppifyStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = WebAppifyStoreKitConfig.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +191,6 @@
 				400851B72B81543200878206 /* AddWebsiteView.swift */,
 				400851BA2B81547F00878206 /* EditWebsiteView.swift */,
 				400851BC2B81550700878206 /* WebsitePreviewView.swift */,
-				400851BE2B81556C00878206 /* FaviconView.swift */,
 				40DF06EB2B84FBD5008DC7A8 /* AddWebsiteFullscreenView.swift */,
 			);
 			path = WebsiteManagementViews;
@@ -210,6 +216,15 @@
 				403CD3DF2B7CF40B00E511FF /* Info.plist */,
 			);
 			path = OpenWebAppsWidget;
+			sourceTree = "<group>";
+		};
+		40653E9E2B87A1C500F19E27 /* PreferenceViews */ = {
+			isa = PBXGroup;
+			children = (
+				40653E9C2B87A18200F19E27 /* MainPreferencesView.swift */,
+				4006191B2B8E3DD400FAC600 /* PurchaseOptionsView.swift */,
+			);
+			path = PreferenceViews;
 			sourceTree = "<group>";
 		};
 		4098879E2B7BBE5300848253 = {
@@ -245,12 +260,13 @@
 				40E2DCE82B7E70310000D757 /* Helpers */,
 				40DF06EA2B84F2FB008DC7A8 /* WebsiteViews */,
 				400851B52B81541300878206 /* WebsiteManagementViews */,
+				40653E9E2B87A1C500F19E27 /* PreferenceViews */,
 				409887D62B7BBF7D00848253 /* Info.plist */,
 				409887AA2B7BBE5300848253 /* WebAppifyApp.swift */,
 				40DF06F52B864EC2008DC7A8 /* ContentView.swift */,
 				409887AE2B7BBE5600848253 /* Assets.xcassets */,
 				409887B02B7BBE5600848253 /* Preview Content */,
-				40653E9A2B869D3700F19E27 /* FaviconViewProvidingImage.swift */,
+				40F3E1B62B87E7C20046C739 /* WebAppifyStoreKitConfig.storekit */,
 			);
 			path = WebAppify;
 			sourceTree = "<group>";
@@ -308,6 +324,9 @@
 				40E2DCF02B7EAB5D0000D757 /* NetworkImage.swift */,
 				40DF06EF2B8545D3008DC7A8 /* HelperFunctions.swift */,
 				40DF06F32B863D73008DC7A8 /* QuickActionLaunchListView.swift */,
+				40653E9A2B869D3700F19E27 /* FaviconViewProvidingImage.swift */,
+				400851BE2B81556C00878206 /* FaviconView.swift */,
+				40712BDE2B8FA74E00714A1B /* StoreItems.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -536,7 +555,10 @@
 				40DF06F02B8545D3008DC7A8 /* HelperFunctions.swift in Sources */,
 				40E2DCEC2B7E722B0000D757 /* ArrayExtension.swift in Sources */,
 				40E2DCEA2B7E703C0000D757 /* WebsiteEntry.swift in Sources */,
+				4006191C2B8E3DD400FAC600 /* PurchaseOptionsView.swift in Sources */,
+				40653E9D2B87A18200F19E27 /* MainPreferencesView.swift in Sources */,
 				400851BF2B81556C00878206 /* FaviconView.swift in Sources */,
+				40712BDF2B8FA74E00714A1B /* StoreItems.swift in Sources */,
 				400851BD2B81550700878206 /* WebsitePreviewView.swift in Sources */,
 				40DF06EC2B84FBD5008DC7A8 /* AddWebsiteFullscreenView.swift in Sources */,
 				409887AB2B7BBE5300848253 /* WebAppifyApp.swift in Sources */,
@@ -617,9 +639,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bk.WebAppify.OpenWebAppsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -645,9 +671,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bk.WebAppify.OpenWebAppsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -784,11 +814,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebAppify/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WebAppify;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to your photos to save your website-icons";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -802,7 +835,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -820,11 +853,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebAppify/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WebAppify;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to your photos to save your website-icons";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -838,7 +874,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

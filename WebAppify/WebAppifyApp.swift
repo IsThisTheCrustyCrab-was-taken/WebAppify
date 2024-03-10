@@ -15,17 +15,15 @@ struct WebAppifyApp: App {
     @EnvironmentObject var sceneDelegate: SceneDelegate
     @State var path = NavigationPath()
     @State var correctSiteLoaded = false
+    @StateObject private var purchaseManager = PurchaseManager()
     var body: some Scene {
         WindowGroup {
-//            if openURL {
-//                WebsiteView(loaded: $correctSideLoaded)
-//                    .onOpenURL(perform: {handleURL(url: $0)})
-//            } else {
-//                ListWebsitesView(path: $path)
-//                    .onOpenURL(perform: {handleURL(url: $0)})
-//            }
             ContentView(path: $path, openURL: $openURL, correctSiteLoaded: $correctSiteLoaded)
                 .onOpenURL(perform: {handleURL(url: $0)})
+                .environmentObject(purchaseManager)
+                .task {
+                    await purchaseManager.refreshPurchasedProducts()
+                }
         }
     }
     func handleURL(url: URL){
@@ -56,6 +54,14 @@ struct WebAppifyApp: App {
             return
         }
         openURL = false
+        let startIndex = urlString.startIndex
+        let httpsIndex = urlString.index(startIndex, offsetBy: "https://".count)
+        let httpIndex = urlString.index(startIndex, offsetBy: "http://".count)
+        if urlString.starts(with: "https//"){
+            urlString = urlString.replacingOccurrences(of: "https//", with: "https://", range: startIndex..<httpsIndex)
+        } else if urlString.starts(with: "http//"){
+            urlString = urlString.replacingOccurrences(of: "http//", with: "http://", range: startIndex..<httpIndex)
+        }
         path.append(urlString)
     }
 

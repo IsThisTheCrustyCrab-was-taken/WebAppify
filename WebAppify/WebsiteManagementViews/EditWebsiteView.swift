@@ -24,6 +24,7 @@ struct EditWebsiteView: View {
     @State var showAddToShortcutsSheet = false
     @State var saveable = false
     @State var iconLoadedState: IconLoadedStates = .notLoaded
+    @State var showSavedAlert = false
     var saveImageText: String {
         switch saveImageState {
         case .notSaved:
@@ -62,6 +63,7 @@ struct EditWebsiteView: View {
                         case .notSaved:
                             await saveImage()
                             withAnimation(.spring){
+                                showSavedAlert.toggle()
                                 saveImageState = .saved
                             }
                         default:
@@ -69,7 +71,7 @@ struct EditWebsiteView: View {
                         }
                     }
                 }, label: {
-                    Text(saveImageText)
+                    Text("Save Image")
                 })
                 .disabled(iconLoadedState == .notLoaded)
                 .confirmationDialog("Are you sure you want to save the icon again?", isPresented: $showSaveAgainConfirmationDialog){
@@ -77,9 +79,10 @@ struct EditWebsiteView: View {
                         Task{
                             await saveImage()
                             showSaveAgainConfirmationDialog = false
-                        }
-                        withAnimation(.spring){
-                            saveImageState = .savedAgain
+                            withAnimation(.spring){
+                                showSavedAlert.toggle()
+                                saveImageState = .savedAgain
+                            }
                         }
                     }
                     Button("Cancel", role: .cancel){
@@ -87,6 +90,11 @@ struct EditWebsiteView: View {
                     }
                 } message: {
                     Text("Are you sure you want to save the icon again?")
+                }
+                .alert("Saved!", isPresented: $showSavedAlert){
+                    Button("OK", role: .cancel){
+                        showSavedAlert.toggle()
+                    }
                 }
             }
         }

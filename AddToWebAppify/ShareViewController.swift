@@ -26,29 +26,13 @@ class ShareViewController: UIViewController {
         if itemProvider.hasItemConformingToTypeIdentifier(urlDataType) {
             print("item has url data type")
             itemProvider.loadItem(forTypeIdentifier: urlDataType) { (providedURL, error) in
-                print("itemProvider loaded")
-                if let error {
-                    print("loading error \(error.localizedDescription)")
-                    self.close()
-                    return
-                }
-                if let url = providedURL as? URL {
-                    DispatchQueue.main.async {
-                        let text = url.absoluteString
-                        let addToWebAppifyView = UIHostingController(rootView: AddToWebAppifyView(text: text))
-                        self.addChild(addToWebAppifyView)
-                        self.view.addSubview(addToWebAppifyView.view)
-
-                        addToWebAppifyView.view.translatesAutoresizingMaskIntoConstraints = false
-                        addToWebAppifyView.view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-                        addToWebAppifyView.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-                        addToWebAppifyView.view.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-                        addToWebAppifyView.view.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-                    }
-                } else {
-                    self.close()
-                    return
-                }
+                let url = (providedURL as! NSURL).absoluteURL!
+                var urlString = url.absoluteString
+                if urlString.starts(with: "https://") {urlString.removeFirst("https://".count)}
+                else if urlString.starts(with: "http://") {urlString.removeFirst("http://".count)}
+                let openURL = URL(string: "webappify://\(url.absoluteString)")!
+                self.open(url: openURL)
+                self.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
             }
 
         } else {
@@ -57,14 +41,24 @@ class ShareViewController: UIViewController {
             return
         }
 
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("close"), object: nil, queue: nil) { _ in
-            DispatchQueue.main.async {
-                self.close()
-            }
-        }
-
-
     }
+
+    private func open(url: URL) {
+        var responder: UIResponder? = self as UIResponder
+        let selector = #selector(openURL(_:))
+
+        while responder != nil {
+            if responder!.responds(to: selector) && responder != self {
+                responder!.perform(selector, with: url)
+                return
+            }
+            responder = responder?.next
+        }
+    }
+
+    @objc
+    private func openURL(_ url: URL) {return}
+
     func close() {
         self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
     }

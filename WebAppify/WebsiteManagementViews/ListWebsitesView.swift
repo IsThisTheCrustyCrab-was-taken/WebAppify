@@ -14,6 +14,7 @@ struct ListWebsitesView: View {
     @AppStorage("websiteEntries", store: UserDefaults(suiteName: "group.com.bk.WebAppify")) var websiteEntries: [WebsiteEntry] = []
     @State private var showAddSheet = false
     @Binding var path: NavigationPath
+    @EnvironmentObject private var purchaseManager: PurchaseManager
     var body: some View {
         NavigationStack(path: $path){
             List {
@@ -41,6 +42,18 @@ struct ListWebsitesView: View {
                         Image(systemName: "plus")
                     })
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink {
+                        MainPreferencesView()
+                    } label: {
+                        Label(
+                            title: { Text("Preferences") },
+                            icon: { Image(systemName: "gear") }
+                        )
+                    }
+
+
+                }
             }
             .navigationDestination(for: WebsiteEntry.self) { element in
                 let el = $websiteEntries.first(where: { el in
@@ -59,6 +72,14 @@ struct ListWebsitesView: View {
                 .presentationCornerRadius(20)
                 .presentationContentInteraction(.resizes)
                 .presentationBackgroundInteraction(.disabled)
+        }
+        .task {
+            do {
+                try await StoreItems.shared.loadProducts()
+                await purchaseManager.refreshPurchasedProducts()
+            } catch {
+                print(error)
+            }
         }
     }
 }

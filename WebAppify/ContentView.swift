@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct ContentView: View {
     @Binding var path: NavigationPath

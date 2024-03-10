@@ -31,7 +31,6 @@ class WebData {
     }
 }
 
-
 @Observable
 class FaviconCache {
     static let shared = FaviconCache()
